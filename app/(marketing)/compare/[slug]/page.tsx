@@ -179,25 +179,40 @@ export default async function ComparisonPage({
             <p className="text-muted-foreground mb-4">Updated May 2026</p>
 
             {/* Quick Score Comparison */}
-            <div className="flex items-center justify-center gap-8 mt-8">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
-                  <span className="text-xl font-bold text-muted-foreground">
-                    {providerA.name.charAt(0)}
-                  </span>
-                </div>
-                <p className="font-semibold text-midnight">{providerA.name}</p>
-                <ScoreBadge score={providerA.scores.overall} size="sm" className="mt-2" />
+            <div className="flex items-center justify-center gap-4 md:gap-6 mt-8">
+              {/* Provider A */}
+              <div className="flex-1 max-w-[200px]">
+                <Card className="p-6 text-center">
+                  <div className="w-20 h-20 mx-auto bg-cloud rounded-xl flex items-center justify-center mb-3">
+                    <span className="text-3xl font-bold text-midnight">
+                      {providerA.name.charAt(0)}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-midnight mb-3">
+                    {providerA.name}
+                  </h3>
+                  <ScoreBadge score={providerA.scores.overall} size="lg" />
+                </Card>
               </div>
-              <span className="font-display text-4xl font-bold text-muted-foreground">VS</span>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-white rounded-lg shadow-sm flex items-center justify-center mb-2">
-                  <span className="text-xl font-bold text-muted-foreground">
-                    {providerB.name.charAt(0)}
-                  </span>
-                </div>
-                <p className="font-semibold text-midnight">{providerB.name}</p>
-                <ScoreBadge score={providerB.scores.overall} size="sm" className="mt-2" />
+
+              {/* VS divider */}
+              <div className="flex-shrink-0 text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                vs
+              </div>
+
+              {/* Provider B */}
+              <div className="flex-1 max-w-[200px]">
+                <Card className="p-6 text-center">
+                  <div className="w-20 h-20 mx-auto bg-cloud rounded-xl flex items-center justify-center mb-3">
+                    <span className="text-3xl font-bold text-midnight">
+                      {providerB.name.charAt(0)}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-midnight mb-3">
+                    {providerB.name}
+                  </h3>
+                  <ScoreBadge score={providerB.scores.overall} size="lg" />
+                </Card>
               </div>
             </div>
           </div>
