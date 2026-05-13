@@ -12,52 +12,28 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
 
 const providerLinks = [
-  {
-    title: "All Providers",
-    href: "/rankings",
-    description: "Compare all GLP-1 telehealth providers",
-  },
-  {
-    title: "Best for Women",
-    href: "/for-women",
-    description: "Top picks tailored for women",
-  },
-  {
-    title: "Best for Men",
-    href: "/for-men",
-    description: "Top picks tailored for men",
-  },
-  {
-    title: "Brand-Name Only",
-    href: "/brand-name",
-    description: "Providers offering FDA-approved medications",
-  },
+  { title: "All Providers", href: "/rankings" },
+  { title: "Best for Women", href: "/for-women" },
+  { title: "Best for Men", href: "/for-men" },
+  { title: "Brand-Name Only", href: "/brand-name" },
 ];
 
 const medicationLinks = [
-  {
-    title: "Semaglutide",
-    href: "/medications/semaglutide",
-    description: "Wegovy, Ozempic, and compounded options",
-  },
-  {
-    title: "Tirzepatide",
-    href: "/medications/tirzepatide",
-    description: "Zepbound, Mounjaro, and compounded options",
-  },
-  {
-    title: "Wegovy",
-    href: "/medications/wegovy",
-    description: "FDA-approved semaglutide for weight loss",
-  },
-  {
-    title: "Zepbound",
-    href: "/medications/zepbound",
-    description: "FDA-approved tirzepatide for weight loss",
-  },
+  { title: "Semaglutide", href: "/medications/semaglutide" },
+  { title: "Tirzepatide", href: "/medications/tirzepatide" },
+  { title: "Wegovy", href: "/medications/wegovy" },
+  { title: "Zepbound", href: "/medications/zepbound" },
+  { title: "Ozempic", href: "/medications/ozempic" },
+  { title: "Mounjaro", href: "/medications/mounjaro" },
+];
+
+const compareLinks = [
+  { title: "Hims vs Ro", href: "/compare/hims-vs-ro" },
+  { title: "Henry Meds vs Eden", href: "/compare/henry-meds-vs-eden" },
+  { title: "Wegovy vs Zepbound", href: "/compare/wegovy-vs-zepbound" },
+  { title: "Compounded vs Brand", href: "/compare/compounded-vs-brand" },
 ];
 
 const resourceLinks = [
@@ -76,7 +52,7 @@ export function Header() {
       <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-display text-xl font-bold text-midnight">
+          <span className="text-xl font-bold text-midnight">
             Affordable<span className="text-forest">GLP-1</span>
           </span>
         </Link>
@@ -85,24 +61,17 @@ export function Header() {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Providers</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-sm">Providers</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                <ul className="w-48 p-2">
                   {providerLinks.map((link) => (
                     <li key={link.href}>
                       <NavigationMenuLink asChild>
                         <Link
                           href={link.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          )}
+                          className="block px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors"
                         >
-                          <div className="text-sm font-medium leading-none">
-                            {link.title}
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {link.description}
-                          </p>
+                          {link.title}
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -112,24 +81,17 @@ export function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Medications</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-sm">Medications</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                <ul className="w-48 p-2">
                   {medicationLinks.map((link) => (
                     <li key={link.href}>
                       <NavigationMenuLink asChild>
                         <Link
                           href={link.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          )}
+                          className="block px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors"
                         >
-                          <div className="text-sm font-medium leading-none">
-                            {link.title}
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {link.description}
-                          </p>
+                          {link.title}
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -139,59 +101,37 @@ export function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Compare</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-sm">Compare</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[300px] gap-3 p-4">
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        href="/compare/hims-vs-ro"
-                        className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent"
-                      >
-                        <div className="text-sm font-medium">Hims vs Ro</div>
-                      </Link>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        href="/compare/henry-meds-vs-eden"
-                        className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent"
-                      >
-                        <div className="text-sm font-medium">
-                          Henry Meds vs Eden
-                        </div>
-                      </Link>
-                    </NavigationMenuLink>
-                  </li>
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        href="/compare/wegovy-vs-zepbound"
-                        className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent"
-                      >
-                        <div className="text-sm font-medium">
-                          Wegovy vs Zepbound
-                        </div>
-                      </Link>
-                    </NavigationMenuLink>
-                  </li>
+                <ul className="w-56 p-2">
+                  {compareLinks.map((link) => (
+                    <li key={link.href}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href={link.href}
+                          className="block px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors"
+                        >
+                          {link.title}
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                  ))}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-sm">Resources</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4">
+                <ul className="w-48 p-2">
                   {resourceLinks.map((link) => (
                     <li key={link.href}>
                       <NavigationMenuLink asChild>
                         <Link
                           href={link.href}
-                          className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent"
+                          className="block px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors"
                         >
-                          <div className="text-sm font-medium">{link.title}</div>
+                          {link.title}
                         </Link>
                       </NavigationMenuLink>
                     </li>

@@ -8,7 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ScoreBadge, ScoreInline } from "@/components/marketing/score-badge";
 import { FDABadge } from "@/components/marketing/fda-badge";
 import { PricingTable } from "@/components/marketing/pricing-table";
-import { MedicalReviewer } from "@/components/marketing/medical-reviewer";
 import { AffiliateDisclosure } from "@/components/marketing/affiliate-disclosure";
 import { ProviderCard } from "@/components/marketing/provider-card";
 import { Newsletter } from "@/components/marketing/newsletter";
@@ -31,17 +30,6 @@ const providers: Record<string, any> = {
     whoItsNotFor: ["Budget-conscious users seeking the lowest price", "Those who prefer in-person consultations", "Users who want to avoid subscriptions"],
     affiliateUrl: "https://www.hims.com/weight-loss",
   },
-};
-
-const medicalReviewer = {
-  _id: "reviewer-1",
-  _type: "medicalReviewer" as const,
-  name: "Dr. Sarah Chen",
-  slug: { current: "dr-sarah-chen", _type: "slug" as const },
-  credentials: "MD, ABOM",
-  title: "Board-Certified Obesity Medicine Specialist",
-  shortBio: "Dr. Chen is a board-certified physician specializing in obesity medicine with over 10 years of experience in metabolic health and weight management.",
-  specialties: ["Obesity Medicine", "Metabolic Health", "GLP-1 Agonists"],
 };
 
 const alternatives = [
@@ -356,9 +344,6 @@ export default async function ProviderReviewPage({
                 ))}
               </Accordion>
             </div>
-
-            {/* Medical Reviewer */}
-            <MedicalReviewer reviewer={medicalReviewer} variant="signature" className="mb-12" />
 
             {/* Full Disclosure */}
             <AffiliateDisclosure variant="full" className="mb-12" />

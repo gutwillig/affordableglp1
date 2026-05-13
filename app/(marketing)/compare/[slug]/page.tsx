@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ComparisonTable } from "@/components/marketing/comparison-table";
 import { ScoreBadge } from "@/components/marketing/score-badge";
-import { MedicalReviewer } from "@/components/marketing/medical-reviewer";
 import { AffiliateDisclosure } from "@/components/marketing/affiliate-disclosure";
 import { Newsletter } from "@/components/marketing/newsletter";
 
@@ -130,17 +129,6 @@ const comparisons: Record<string, Comparison> = {
       },
     ],
   },
-};
-
-const medicalReviewer = {
-  _id: "reviewer-1",
-  _type: "medicalReviewer" as const,
-  name: "Dr. Sarah Chen",
-  slug: { current: "dr-sarah-chen", _type: "slug" as const },
-  credentials: "MD, ABOM",
-  title: "Board-Certified Obesity Medicine Specialist",
-  shortBio: "Dr. Chen is a board-certified physician specializing in obesity medicine with over 10 years of experience.",
-  specialties: ["Obesity Medicine", "Metabolic Health"],
 };
 
 export async function generateMetadata({
@@ -347,15 +335,6 @@ export default async function ComparisonPage({
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Medical Reviewer */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <MedicalReviewer reviewer={medicalReviewer} variant="signature" />
           </div>
         </div>
       </section>

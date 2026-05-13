@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MedicalReviewer } from "@/components/marketing/medical-reviewer";
 import { AffiliateDisclosure } from "@/components/marketing/affiliate-disclosure";
 import { Newsletter } from "@/components/marketing/newsletter";
 
@@ -62,7 +61,7 @@ const blogPosts = [
     dek: "A detailed guide to common and rare side effects of semaglutide and tirzepatide, plus tips for managing them.",
     category: "side-effects",
     tags: ["side effects", "semaglutide", "tirzepatide", "tips"],
-    author: { name: "Dr. Sarah Chen, MD" },
+    author: { name: "Editorial Team" },
     publishedAt: "May 8, 2026",
     updatedAt: "May 8, 2026",
     featured: true,
@@ -139,17 +138,6 @@ const categories = [
   { slug: "cost-insurance", label: "Cost & Insurance" },
   { slug: "news", label: "News" },
 ];
-
-const medicalReviewer = {
-  _id: "reviewer-1",
-  _type: "medicalReviewer" as const,
-  name: "Dr. Sarah Chen",
-  slug: { current: "dr-sarah-chen", _type: "slug" as const },
-  credentials: "MD, ABOM",
-  title: "Board-Certified Obesity Medicine Specialist",
-  shortBio: "Dr. Chen is a board-certified physician specializing in obesity medicine.",
-  specialties: ["Obesity Medicine", "GLP-1 Agonists"],
-};
 
 export async function generateMetadata({
   params,
@@ -239,9 +227,6 @@ export default async function BlogPage({
                   </Badge>
                 ))}
               </div>
-
-              {/* Medical Reviewer */}
-              <MedicalReviewer reviewer={medicalReviewer} variant="signature" className="mb-8" />
 
               {/* Affiliate Disclosure */}
               <AffiliateDisclosure variant="full" className="mb-8" />

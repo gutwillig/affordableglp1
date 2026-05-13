@@ -67,18 +67,12 @@ export function ProviderCard({
   return (
     <Card
       className={cn(
-        "hover:shadow-lg transition-shadow overflow-hidden",
-        variant === "featured" && "border-forest/20 border-2",
+        "hover:shadow-lg transition-shadow overflow-hidden h-full flex flex-col",
+        variant === "featured" && "ring-2 ring-forest/30",
         className
       )}
     >
-      {badge && (
-        <div className="bg-forest text-white text-xs font-medium px-3 py-1 text-center">
-          {badge}
-        </div>
-      )}
-
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex-1">
         <div className="flex items-start justify-between gap-4 mb-4">
           <div className="flex items-center gap-3">
             {rank && (
@@ -105,9 +99,16 @@ export function ProviderCard({
           <ScoreBadge score={overallScore} size="md" />
         </div>
 
-        <h3 className="font-display text-xl font-semibold text-midnight mb-2">
-          {provider.name}
-        </h3>
+        <div className="flex items-center gap-2 mb-2">
+          <h3 className="font-display text-xl font-semibold text-midnight">
+            {provider.name}
+          </h3>
+          {badge && (
+            <span className="text-xs font-medium bg-forest text-white px-2 py-0.5 rounded-full">
+              {badge}
+            </span>
+          )}
+        </div>
 
         {provider.oneLineVerdict && (
           <p className="text-sm text-slate mb-4">{provider.oneLineVerdict}</p>
@@ -139,7 +140,7 @@ export function ProviderCard({
 
         {/* Pros */}
         {provider.pros && provider.pros.length > 0 && (
-          <ul className="space-y-1.5 mb-4">
+          <ul className="space-y-1.5">
             {provider.pros.slice(0, 3).map((pro, index) => (
               <li key={index} className="flex items-start gap-2 text-sm">
                 <svg
@@ -160,7 +161,7 @@ export function ProviderCard({
         )}
       </CardContent>
 
-      <CardFooter className="px-6 pb-6 pt-0 flex flex-col gap-2">
+      <CardFooter className="px-6 pb-6 pt-0 flex flex-col gap-2 mt-auto">
         <Button asChild className="w-full bg-forest hover:bg-forest-light">
           <Link href={`/go/${provider.slug?.current}`}>
             Visit {provider.name}

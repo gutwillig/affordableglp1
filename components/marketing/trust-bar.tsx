@@ -1,12 +1,10 @@
 import Link from "next/link";
 
 interface TrustBarProps {
-  reviewerName?: string;
   lastUpdated?: string;
 }
 
 export function TrustBar({
-  reviewerName = "Dr. Sarah Chen, MD",
   lastUpdated = "May 2026",
 }: TrustBarProps) {
   return (
@@ -25,13 +23,10 @@ export function TrustBar({
                 clipRule="evenodd"
               />
             </svg>
-            <span>
-              Medically reviewed by{" "}
-              <span className="font-medium">{reviewerName}</span>
-            </span>
+            <span className="font-medium">Independent Research & Reviews</span>
           </span>
-          <span className="hidden sm:inline text-muted">|</span>
-          <span className="hidden sm:inline text-muted">
+          <span className="hidden sm:inline text-soft">|</span>
+          <span className="hidden sm:inline text-soft">
             Updated {lastUpdated}
           </span>
         </div>
