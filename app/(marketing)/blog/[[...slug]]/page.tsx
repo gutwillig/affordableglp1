@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +20,7 @@ const blogPosts = [
     publishedAt: "May 10, 2026",
     updatedAt: "May 10, 2026",
     featured: true,
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&h=630&fit=crop",
     content: `
       <p>If you're considering GLP-1 medications for weight loss, you've likely encountered two main options: semaglutide (brand names Wegovy and Ozempic) and tirzepatide (brand names Zepbound and Mounjaro). Both are highly effective, but they work slightly differently and have different profiles.</p>
 
@@ -65,6 +67,7 @@ const blogPosts = [
     publishedAt: "May 8, 2026",
     updatedAt: "May 8, 2026",
     featured: true,
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=630&fit=crop",
     content: `
       <p>GLP-1 medications are generally well-tolerated, but like all medications, they can cause side effects. Understanding what to expect can help you prepare and know when to seek medical attention.</p>
 
@@ -109,6 +112,7 @@ const blogPosts = [
     publishedAt: "May 5, 2026",
     updatedAt: "May 5, 2026",
     featured: true,
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop",
     content: `
       <p>GLP-1 medications can be expensive, but there are several strategies to make them more affordable. Here's how to save money while getting effective treatment.</p>
 
@@ -207,8 +211,18 @@ export default async function BlogPage({
             </div>
           </header>
 
-          {/* Featured Image Placeholder */}
-          <div className="aspect-video max-w-4xl mx-auto bg-cloud -mt-4 mb-8" />
+          {/* Featured Image */}
+          <div className="max-w-4xl mx-auto px-4 -mt-4 mb-8">
+            <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
 
           {/* Article Content */}
           <div className="container mx-auto px-4 py-8">
@@ -242,8 +256,15 @@ export default async function BlogPage({
                     .slice(0, 2)
                     .map((relatedPost) => (
                       <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
-                        <Card className="hover:shadow-lg transition-shadow h-full">
-                          <div className="aspect-video bg-cloud" />
+                        <Card className="hover:shadow-lg transition-shadow h-full overflow-hidden">
+                          <div className="relative aspect-video">
+                            <Image
+                              src={relatedPost.image}
+                              alt={relatedPost.title}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
                           <CardContent className="p-4">
                             <Badge className="mb-2">{relatedPost.category}</Badge>
                             <h3 className="font-semibold text-midnight line-clamp-2">
@@ -320,7 +341,14 @@ export default async function BlogPage({
             <Link href={`/blog/${filteredPosts[0].slug}`} className="block mb-12">
               <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="grid md:grid-cols-2">
-                  <div className="aspect-video md:aspect-auto bg-cloud" />
+                  <div className="relative aspect-video md:aspect-auto md:min-h-[300px]">
+                    <Image
+                      src={filteredPosts[0].image}
+                      alt={filteredPosts[0].title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <CardContent className="p-6 md:p-8 flex flex-col justify-center">
                     <Badge className="w-fit mb-4">{filteredPosts[0].category}</Badge>
                     <h2 className="font-display text-2xl md:text-3xl font-bold text-midnight mb-4">
@@ -340,8 +368,15 @@ export default async function BlogPage({
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(categorySlug ? filteredPosts : filteredPosts.slice(1)).map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <div className="aspect-video bg-cloud" />
+                <Card className="h-full hover:shadow-lg transition-shadow overflow-hidden">
+                  <div className="relative aspect-video">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <CardContent className="p-6">
                     <Badge className="mb-3">{post.category}</Badge>
                     <h3 className="font-semibold text-midnight mb-2 line-clamp-2">
