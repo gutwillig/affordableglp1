@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
 });
@@ -71,8 +65,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        plusJakarta.variable,
-        fraunces.variable,
+        inter.variable,
         jetbrainsMono.variable,
         "font-sans"
       )}

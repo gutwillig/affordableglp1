@@ -13,8 +13,7 @@ export function AffiliateDisclosure({
   if (variant === "inline") {
     return (
       <p className={cn("text-xs text-muted-foreground", className)}>
-        <strong>Disclosure:</strong> We may earn a commission when you click our
-        links at no extra cost to you.{" "}
+        We may earn a commission from links on this page.{" "}
         <Link href="/affiliate-disclosure" className="underline hover:text-foreground">
           Learn more
         </Link>
@@ -24,69 +23,26 @@ export function AffiliateDisclosure({
 
   if (variant === "footer") {
     return (
-      <div className={cn("bg-cloud py-4", className)}>
-        <div className="container mx-auto px-4">
-          <p className="text-xs text-slate text-center">
-            <strong>Affiliate Disclosure:</strong> AffordableGLP-1.com earns
-            commissions from qualifying purchases through our affiliate links.
-            This does not affect our editorial independence or the price you
-            pay.{" "}
-            <Link
-              href="/affiliate-disclosure"
-              className="underline hover:text-midnight"
-            >
-              Read our full disclosure
-            </Link>
-          </p>
-        </div>
-      </div>
+      <p className={cn("text-xs text-muted-foreground", className)}>
+        We may earn commissions from provider links. This doesn&apos;t affect our rankings.{" "}
+        <Link href="/affiliate-disclosure" className="underline hover:text-foreground">
+          Disclosure
+        </Link>
+      </p>
     );
   }
 
-  // Full disclosure
+  // Full disclosure - simplified
   return (
-    <div
-      className={cn(
-        "bg-cloud border border-soft rounded-lg p-6",
-        className
-      )}
-    >
-      <h3 className="font-semibold text-midnight mb-3 flex items-center gap-2">
-        <svg
-          className="w-5 h-5 text-forest"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        Affiliate Disclosure
-      </h3>
-      <div className="text-sm text-slate space-y-2">
-        <p>
-          AffordableGLP-1.com is reader-supported. When you click on links to
-          telehealth providers and make a purchase, we may earn an affiliate
-          commission at no additional cost to you.
-        </p>
-        <p>
-          Our editorial content is not influenced by affiliate partnerships. We
-          maintain strict editorial standards and only recommend providers we
-          believe offer genuine value to our readers.
-        </p>
-        <p>
-          <Link
-            href="/affiliate-disclosure"
-            className="text-forest hover:text-forest-light underline"
-          >
-            Read our complete affiliate disclosure policy
-          </Link>
-        </p>
-      </div>
+    <div className={cn("text-sm text-muted-foreground border-t pt-6", className)}>
+      <p>
+        <span className="font-medium text-foreground">Affiliate Disclosure:</span>{" "}
+        We earn commissions from some provider links at no extra cost to you.
+        This doesn&apos;t influence our rankings or reviews.{" "}
+        <Link href="/affiliate-disclosure" className="text-forest hover:underline">
+          Full disclosure
+        </Link>
+      </p>
     </div>
   );
 }
