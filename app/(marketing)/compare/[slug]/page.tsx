@@ -129,6 +129,210 @@ const comparisons: Record<string, Comparison> = {
       },
     ],
   },
+  "henry-meds-vs-eden": {
+    title: "Henry Meds vs Eden: Which GLP-1 Provider is Better in 2026?",
+    slug: "henry-meds-vs-eden",
+    providerA: {
+      _id: "3",
+      _type: "provider",
+      name: "Henry Meds",
+      slug: { current: "henry-meds", _type: "slug" },
+      oneLineVerdict: "Affordable compounded GLP-1 with great support",
+      fdaStatus: "compounded",
+      scores: { overall: 87, pricing: 92, medicalQuality: 85, userExperience: 86, customerSupport: 88 },
+      pricing: { startingPrice: 149, consultationFee: 0, shippingFee: 0 },
+      pros: ["Lowest prices available", "Responsive customer support", "Simple intake process"],
+      cons: ["Compounded only", "Limited medication options"],
+      affiliateUrl: "/go/henry-meds",
+    },
+    providerB: {
+      _id: "4",
+      _type: "provider",
+      name: "Eden",
+      slug: { current: "eden", _type: "slug" },
+      oneLineVerdict: "Premium compounded medications with personalized care",
+      fdaStatus: "compounded",
+      scores: { overall: 85, pricing: 88, medicalQuality: 86, userExperience: 84, customerSupport: 85 },
+      pricing: { startingPrice: 179, consultationFee: 0, shippingFee: 0 },
+      pros: ["Personalized dosing", "Good clinical oversight", "Educational resources"],
+      cons: ["Slightly higher prices", "Compounded only"],
+      affiliateUrl: "/go/eden",
+    },
+    verdictSummary: "Henry Meds and Eden are both solid choices for compounded GLP-1 medications. Henry Meds wins on price ($149 vs $179/month) and customer support responsiveness. Eden offers slightly better personalization and educational resources. For budget-conscious users, Henry Meds is our recommendation. Choose Eden if you value personalized care and comprehensive patient education.",
+    winner: "providerA",
+    comparisonTable: [
+      { category: "Starting Price", providerAValue: "$149/mo", providerBValue: "$179/mo", winner: "providerA" },
+      { category: "Overall Score", providerAValue: "87", providerBValue: "85", winner: "providerA" },
+      { category: "Consultation Fee", providerAValue: "Free", providerBValue: "Free", winner: "tie" },
+      { category: "Medication Type", providerAValue: "Compounded", providerBValue: "Compounded", winner: "tie" },
+      { category: "Medical Quality", providerAValue: "85", providerBValue: "86", winner: "providerB" },
+      { category: "Customer Support", providerAValue: "88", providerBValue: "85", winner: "providerA" },
+      { category: "Personalization", providerAValue: "Standard", providerBValue: "Enhanced", winner: "providerB" },
+      { category: "Educational Resources", providerAValue: "Basic", providerBValue: "Comprehensive", winner: "providerB" },
+    ],
+    whenAWins: [
+      "You want the lowest price possible",
+      "You prioritize responsive customer support",
+      "You prefer a simple, no-frills experience",
+      "You're comfortable with standard dosing protocols",
+    ],
+    whenBWins: [
+      "You want personalized dosing adjustments",
+      "You value educational resources and guidance",
+      "You prefer more hands-on clinical support",
+      "You don't mind paying slightly more for extras",
+    ],
+    faqs: [
+      {
+        question: "Are Henry Meds and Eden legitimate?",
+        answer: "Yes, both Henry Meds and Eden are legitimate telehealth providers that work with licensed physicians and 503B compounding pharmacies. They're both compliant with state telehealth regulations.",
+      },
+      {
+        question: "Do either offer brand-name medications?",
+        answer: "No, both Henry Meds and Eden specialize in compounded medications. If you specifically want brand-name Wegovy or Zepbound, consider Hims or Ro instead.",
+      },
+      {
+        question: "Which has faster shipping?",
+        answer: "Both typically ship within 3-5 business days after prescription approval. Henry Meds has a slight edge with some users reporting 2-3 day delivery times.",
+      },
+    ],
+  },
+  "wegovy-vs-zepbound": {
+    title: "Wegovy vs Zepbound: Which GLP-1 Medication is Better in 2026?",
+    slug: "wegovy-vs-zepbound",
+    providerA: {
+      _id: "med-1",
+      _type: "provider",
+      name: "Wegovy",
+      slug: { current: "wegovy", _type: "slug" },
+      oneLineVerdict: "The original FDA-approved GLP-1 for weight loss",
+      fdaStatus: "approved",
+      scores: { overall: 90, pricing: 75, medicalQuality: 95, userExperience: 92, customerSupport: 90 },
+      pricing: { startingPrice: 1349, consultationFee: 0, shippingFee: 0 },
+      pros: ["FDA-approved for weight loss", "Extensive clinical data", "Widely available"],
+      cons: ["High retail price", "Weekly injections", "Supply shortages"],
+      affiliateUrl: "/medications/wegovy",
+    },
+    providerB: {
+      _id: "med-2",
+      _type: "provider",
+      name: "Zepbound",
+      slug: { current: "zepbound", _type: "slug" },
+      oneLineVerdict: "Newer dual-action GLP-1/GIP for enhanced weight loss",
+      fdaStatus: "approved",
+      scores: { overall: 92, pricing: 73, medicalQuality: 96, userExperience: 92, customerSupport: 90 },
+      pricing: { startingPrice: 1059, consultationFee: 0, shippingFee: 0 },
+      pros: ["Higher average weight loss", "Dual hormone action", "Lower list price"],
+      cons: ["Newer with less long-term data", "Supply constraints", "Weekly injections"],
+      affiliateUrl: "/medications/zepbound",
+    },
+    verdictSummary: "Both Wegovy (semaglutide) and Zepbound (tirzepatide) are FDA-approved, highly effective weight loss medications. Zepbound shows slightly higher average weight loss in clinical trials (up to 22% vs 15%) due to its dual GLP-1/GIP action. Wegovy has more long-term safety data and wider availability. For maximum weight loss potential, Zepbound has the edge. For those who prefer established medications with extensive research, Wegovy remains excellent.",
+    winner: "providerB",
+    comparisonTable: [
+      { category: "Average Weight Loss", providerAValue: "~15%", providerBValue: "~22%", winner: "providerB" },
+      { category: "Retail Price", providerAValue: "$1,349/mo", providerBValue: "$1,059/mo", winner: "providerB" },
+      { category: "FDA Approval", providerAValue: "2021", providerBValue: "2023", winner: "providerA" },
+      { category: "Mechanism", providerAValue: "GLP-1", providerBValue: "GLP-1 + GIP", winner: "providerB" },
+      { category: "Long-term Data", providerAValue: "Extensive", providerBValue: "Growing", winner: "providerA" },
+      { category: "Dosing", providerAValue: "Weekly", providerBValue: "Weekly", winner: "tie" },
+      { category: "Insurance Coverage", providerAValue: "Variable", providerBValue: "Variable", winner: "tie" },
+      { category: "Availability", providerAValue: "Limited", providerBValue: "Limited", winner: "tie" },
+    ],
+    whenAWins: [
+      "You prefer a medication with more long-term data",
+      "Your insurance covers Wegovy but not Zepbound",
+      "You've tried tirzepatide and prefer semaglutide",
+      "Wegovy is more available in your area",
+    ],
+    whenBWins: [
+      "You want maximum weight loss potential",
+      "You prefer the dual-action mechanism",
+      "Your insurance covers Zepbound",
+      "You want the lower list price option",
+    ],
+    faqs: [
+      {
+        question: "Which causes more side effects?",
+        answer: "Both medications have similar gastrointestinal side effects (nausea, vomiting, diarrhea). Some studies suggest Zepbound may have slightly higher rates of GI side effects, but individual responses vary significantly.",
+      },
+      {
+        question: "Can I switch between Wegovy and Zepbound?",
+        answer: "Yes, with your doctor's guidance. Switching typically involves a dose adjustment period. Many patients switch to try the other option or due to insurance/availability reasons.",
+      },
+      {
+        question: "Are compounded versions the same?",
+        answer: "Compounded semaglutide and tirzepatide use the same active ingredients but are made by compounding pharmacies, not the brand manufacturers. They're significantly cheaper but have different regulatory oversight.",
+      },
+    ],
+  },
+  "compounded-vs-brand": {
+    title: "Compounded vs Brand-Name GLP-1: Which Should You Choose?",
+    slug: "compounded-vs-brand",
+    providerA: {
+      _id: "type-1",
+      _type: "provider",
+      name: "Compounded",
+      slug: { current: "compounded", _type: "slug" },
+      oneLineVerdict: "Affordable access to GLP-1 medications",
+      fdaStatus: "compounded",
+      scores: { overall: 85, pricing: 95, medicalQuality: 80, userExperience: 85, customerSupport: 85 },
+      pricing: { startingPrice: 149, consultationFee: 0, shippingFee: 0 },
+      pros: ["80-90% cheaper than brand", "Good availability", "Multiple providers"],
+      cons: ["Not FDA-approved products", "Variable quality", "Regulatory uncertainty"],
+      affiliateUrl: "/rankings",
+    },
+    providerB: {
+      _id: "type-2",
+      _type: "provider",
+      name: "Brand-Name",
+      slug: { current: "brand-name", _type: "slug" },
+      oneLineVerdict: "FDA-approved medications with proven safety",
+      fdaStatus: "approved",
+      scores: { overall: 92, pricing: 60, medicalQuality: 98, userExperience: 90, customerSupport: 88 },
+      pricing: { startingPrice: 1000, consultationFee: 0, shippingFee: 0 },
+      pros: ["FDA-approved", "Consistent quality", "Insurance may cover"],
+      cons: ["Very expensive", "Supply shortages", "Requires prior authorization"],
+      affiliateUrl: "/brand-name",
+    },
+    verdictSummary: "The choice between compounded and brand-name GLP-1s comes down to budget vs. certainty. Compounded medications cost $149-299/month vs $1,000+/month for brands, making them accessible to more people. However, brand-name medications have FDA approval, consistent manufacturing, and established safety profiles. If cost is your primary concern, compounded is a reasonable choice from reputable providers. If you can afford brand-name or have insurance coverage, it offers the highest assurance of quality.",
+    winner: "tie",
+    comparisonTable: [
+      { category: "Monthly Cost", providerAValue: "$149-299", providerBValue: "$1,000+", winner: "providerA" },
+      { category: "FDA Approval", providerAValue: "No", providerBValue: "Yes", winner: "providerB" },
+      { category: "Quality Consistency", providerAValue: "Variable", providerBValue: "Consistent", winner: "providerB" },
+      { category: "Availability", providerAValue: "Good", providerBValue: "Limited", winner: "providerA" },
+      { category: "Insurance Coverage", providerAValue: "Never", providerBValue: "Sometimes", winner: "providerB" },
+      { category: "Long-term Data", providerAValue: "Limited", providerBValue: "Extensive", winner: "providerB" },
+      { category: "Provider Options", providerAValue: "Many", providerBValue: "Few", winner: "providerA" },
+      { category: "Regulatory Standing", providerAValue: "Uncertain", providerBValue: "Stable", winner: "providerB" },
+    ],
+    whenAWins: [
+      "Budget is your primary concern",
+      "You don't have insurance coverage",
+      "Brand-name is unavailable in your area",
+      "You're comfortable with 503B pharmacy products",
+    ],
+    whenBWins: [
+      "You can afford the higher cost",
+      "Your insurance covers the medication",
+      "You want FDA-approved products only",
+      "You prioritize established safety data",
+    ],
+    faqs: [
+      {
+        question: "Are compounded GLP-1s safe?",
+        answer: "Compounded medications from reputable 503B pharmacies are generally considered safe. However, they don't undergo the same FDA approval process as brand-name drugs. Choose providers that use FDA-registered 503B outsourcing facilities.",
+      },
+      {
+        question: "Will compounded GLP-1s be banned?",
+        answer: "The FDA can end compounding when drug shortages resolve. Currently, semaglutide remains on the shortage list. The regulatory landscape may change, so stay informed through our FDA Tracker.",
+      },
+      {
+        question: "Is the active ingredient the same?",
+        answer: "Yes, compounded semaglutide uses the same active ingredient as Wegovy/Ozempic. The difference is in manufacturing—brand-name is made by Novo Nordisk with FDA oversight, while compounded is made by compounding pharmacies.",
+      },
+    ],
+  },
 };
 
 export async function generateMetadata({
@@ -182,16 +386,18 @@ export default async function ComparisonPage({
             <div className="flex items-center justify-center gap-4 md:gap-6 mt-8">
               {/* Provider A */}
               <div className="flex-1 max-w-[200px]">
-                <Card className="p-6 text-center">
-                  <div className="w-20 h-20 mx-auto bg-cloud rounded-xl flex items-center justify-center mb-3">
-                    <span className="text-3xl font-bold text-midnight">
-                      {providerA.name.charAt(0)}
-                    </span>
+                <Card className="p-6">
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-cloud rounded-xl flex items-center justify-center mb-3">
+                      <span className="text-3xl font-bold text-midnight">
+                        {providerA.name.charAt(0)}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-lg font-semibold text-midnight mb-3">
+                      {providerA.name}
+                    </h3>
+                    <ScoreBadge score={providerA.scores.overall} size="lg" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-midnight mb-3">
-                    {providerA.name}
-                  </h3>
-                  <ScoreBadge score={providerA.scores.overall} size="lg" />
                 </Card>
               </div>
 
@@ -202,16 +408,18 @@ export default async function ComparisonPage({
 
               {/* Provider B */}
               <div className="flex-1 max-w-[200px]">
-                <Card className="p-6 text-center">
-                  <div className="w-20 h-20 mx-auto bg-cloud rounded-xl flex items-center justify-center mb-3">
-                    <span className="text-3xl font-bold text-midnight">
-                      {providerB.name.charAt(0)}
-                    </span>
+                <Card className="p-6">
+                  <div className="flex flex-col items-center">
+                    <div className="w-20 h-20 bg-cloud rounded-xl flex items-center justify-center mb-3">
+                      <span className="text-3xl font-bold text-midnight">
+                        {providerB.name.charAt(0)}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-lg font-semibold text-midnight mb-3">
+                      {providerB.name}
+                    </h3>
+                    <ScoreBadge score={providerB.scores.overall} size="lg" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-midnight mb-3">
-                    {providerB.name}
-                  </h3>
-                  <ScoreBadge score={providerB.scores.overall} size="lg" />
                 </Card>
               </div>
             </div>
