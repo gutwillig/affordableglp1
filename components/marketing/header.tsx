@@ -81,26 +81,6 @@ export function Header() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-sm">Medications</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="w-48 p-2">
-                  {medicationLinks.map((link) => (
-                    <li key={link.href}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={link.href}
-                          className="block px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors"
-                        >
-                          {link.title}
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
               <NavigationMenuTrigger className="text-sm">Compare</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="w-56 p-2">
@@ -179,21 +159,6 @@ export function Header() {
                   Providers
                 </h3>
                 {providerLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block py-2 text-foreground hover:text-forest transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.title}
-                  </Link>
-                ))}
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2 text-muted-foreground text-sm uppercase tracking-wide">
-                  Medications
-                </h3>
-                {medicationLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}

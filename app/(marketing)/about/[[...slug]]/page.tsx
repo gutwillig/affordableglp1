@@ -106,11 +106,11 @@ export default async function AboutPage({
                     </svg>
                   </div>
                   <h3 className="font-semibold text-midnight mb-2">
-                    Research & Test
+                    Research
                   </h3>
                   <p className="text-sm text-slate">
-                    We personally evaluate each provider&apos;s intake process, app
-                    experience, and customer support.
+                    We thoroughly research each provider&apos;s offerings, pricing,
+                    and customer feedback.
                   </p>
                 </CardContent>
               </Card>
